@@ -29,7 +29,8 @@ class DisplayAllCategories extends Module
     {
         if (!parent::install() ||
             !$this->registerHook('displayHeader') ||
-            !$this->registerHook('displayAllCategoriesPage')
+            !$this->registerHook('displayAllCategoriesPage') ||
+            !Configuration::updateValue('CATEGORIES_PAGE_ROUTE', 'categories')
         ) {
             return false;
         }
